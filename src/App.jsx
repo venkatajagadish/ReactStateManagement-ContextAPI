@@ -66,9 +66,12 @@ function App() {
       };
     });
   }
-
+  const cartContextValue = {
+    items: shoppingCart.items,
+    addItemToCart: handleAddItemToCart,
+  };
   return (
-    <CartContext.Provider value={{ items: [] }}>
+    <CartContext.Provider value={cartContextValue}>
       <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
@@ -77,7 +80,7 @@ function App() {
         <ul id="products">
           {DUMMY_PRODUCTS.map((product) => (
             <li key={product.id}>
-              <Product {...product} onAddToCart={handleAddItemToCart} />
+              <Product {...product} />
             </li>
           ))}
         </ul>
