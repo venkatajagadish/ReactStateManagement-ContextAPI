@@ -1,2 +1,4 @@
 # ReactStateManagement-ContextAPI
-Advanced react state management using inbuilt context api
+React state management using useReduce and avoid prop drilling using inbuilt context api.
+
+Check commits for each step
